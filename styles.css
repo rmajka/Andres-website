@@ -1,0 +1,353 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Montserrat:wght@300&family=Playfair+Display:ital,wght@1,900&display=swap");
+
+:root {
+  --main-red: #eb281a;
+  --dark-grey: #42474c;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/*==========scroll bar==========*/
+body {
+  background: linear-gradient(90deg, #f7dfd9, #ffffff);
+  scroll-behavior: smooth;
+  z-index: 90;
+}
+
+body::-webkit-scrollbar {
+  width: 12px; /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--dark-grey); /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--main-red); /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: 3px solid var(--dark-grey); /* creates padding around scroll thumb */
+}
+/*==========scroll bar==========*/
+
+.nav-container {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 90px;
+  background-color: var(--dark-grey);
+  z-index: 100;
+}
+
+.nav-span {
+  display: flex;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.nav-span > img {
+  width: 25px;
+}
+
+.van-section {
+  background-image: url("./images/van.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  width: 100%;
+  height: 80vh;
+}
+
+.van-section-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: #000000a6;
+}
+
+.logo-min {
+  width: 100px;
+}
+
+.company-name {
+  font-size: 2rem;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  text-align: center;
+}
+
+.company-name > span {
+  color: var(--main-red);
+}
+
+.slogan {
+  font-family: "Merriweather", serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: white;
+  margin-top: 50px;
+}
+
+.span-red {
+  color: var(--main-red);
+  text-align: center;
+}
+
+.span-white {
+  text-align: center;
+}
+
+.middle-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: max-content;
+  padding: 40px;
+  z-index: 100;
+}
+
+.par-1 {
+  font-family: "Merriweather", serif;
+  font-size: 1.5rem;
+  color: #000000;
+  padding: 20px 0;
+}
+
+.par-2 {
+  font-family: "Montserrat", serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--dark-grey);
+  margin-bottom: 50px;
+}
+
+.bottom-section {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.bottom-section > div {
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+  max-width: 350px;
+  min-width: 250px;
+  height: 320px;
+  background-color: var(--dark-grey);
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  margin-bottom: 30px;
+  padding: 20px;
+  margin: 4px;
+}
+
+.bottom-section > div > img {
+  width: 50px;
+  margin-bottom: 15px;
+}
+
+.bottom-section > div > span {
+  font-family: "Merriweather", serif;
+  font-size: 0.9rem;
+  color: var(--main-red);
+  margin-bottom: 20px;
+}
+
+.bottom-section > div > p {
+  font-family: "Montserrat", serif;
+  color: white;
+}
+/*=======whatsapp btn animation*/
+.btn-whatsapp-pulse > img {
+  width: 50px;
+}
+
+.btn-whatsapp-pulse {
+  background: #25d366;
+  color: white;
+  position: fixed;
+  bottom: 200px;
+  right: 20px;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 0;
+  height: 0;
+  padding: 30px;
+  text-decoration: none;
+  border-radius: 50%;
+  animation-name: pulse;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+  }
+  80% {
+    box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+  }
+}
+
+.btn-whatsapp-pulse-border {
+  bottom: 120px;
+  right: 20px;
+  animation-play-state: paused;
+}
+
+.btn-whatsapp-pulse-border::before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  padding: 25px;
+  border: 5px solid #25d366;
+  opacity: 0.75;
+  animation-name: pulse-border;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes pulse-border {
+  0% {
+    padding: 25px;
+    opacity: 0.75;
+  }
+  75% {
+    padding: 50px;
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 850px) {
+  .btn-whatsapp-pulse {
+    bottom: 40px;
+  }
+
+  .btn-whatsapp-pulse > img {
+    width: 45px;
+  }
+}
+
+/*=======whatsapp btn animation*/
+.btn {
+  position: fixed;
+  bottom: 200px;
+  right: 40px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Montserrat", serif;
+  font-size: 0.9rem;
+  width: 100%;
+  height: 30px;
+  background: linear-gradient(90deg, #f7dfd9, #ffffff);
+  padding: 70px 0 20px 0;
+}
+
+footer > a {
+  font-family: "Montserrat", serif;
+  color: #000000;
+}
+
+@media (min-width: 1500px) {
+  .slogan {
+    font-size: 2.7rem;
+  }
+}
+
+@media (min-width: 1300px) {
+  .middle-section {
+    padding: 0 200px;
+  }
+
+  .slogan {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 850px) {
+  .nav-span {
+    font-size: 0.9rem;
+  }
+
+  .slogan {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .par-1 {
+    text-align: center;
+  }
+
+  .par-2 {
+    text-align: center;
+  }
+
+  .span-red {
+    text-align: center;
+  }
+
+  .span-white {
+    text-align: center;
+  }
+
+  .bottom-section {
+    justify-content: center;
+  }
+
+  .middle-section {
+    padding: 10px;
+  }
+
+  .bottom-section > div {
+    width: 45%;
+  }
+}
+
+@media (max-width: 500px) {
+  .middle-section {
+    padding: 0 5px;
+  }
+
+  .bottom-section > div {
+    width: 98%;
+  }
+
+  .company-name {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 690px) {
+  .nav-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
